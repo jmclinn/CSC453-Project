@@ -1,7 +1,7 @@
 CSC453-Project
 ==============
 
-#####Optimized method for mapping data to various projections
+#####Optimized Method for Mapping Data to Various Projections
 
 ###### Jonathan &amp; Yennifer
 
