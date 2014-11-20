@@ -10,7 +10,7 @@ When mapping collected data to a world map, using the Basemap package within mat
 Our Program uses the Pillow, a friendly PIL (python Imaging Library) fork which allows us to image mapping data more efficiently and rapidly. 
 
 
-previous program and execution time: 
+Matplotlib program and execution: 
 =====================================
 
 
@@ -27,7 +27,9 @@ conclusions:
 
 Further Developement: 
 ======================
-
+- create a library
+- create a user interface in python 
+- adding grid and stylistic detail 
 
 
 
