@@ -16,7 +16,7 @@ Matplotlib program and execution:
 
 image ouput: 
 
-![alt text](https://lh6.googleusercontent.com/oLYMtP9y_GFA44aH2giG9AwAF2DrOT20TEFn7n0g5vr1MLHzCUsXFFk5DtiZ4WM6WH7q-XYTbcA=w1109-h663)
+![alt text](insert url)
 
 
 Output from Basemap and Matplotlib method:
