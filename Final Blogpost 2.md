@@ -12,6 +12,13 @@ Our Program uses the Pillow, a friendly PIL (python Imaging Library) fork which 
 
 Matplotlib program and execution: 
 =====================================
+
+
+image ouput: 
+
+![alt text](https://lh6.googleusercontent.com/oLYMtP9y_GFA44aH2giG9AwAF2DrOT20TEFn7n0g5vr1MLHzCUsXFFk5DtiZ4WM6WH7q-XYTbcA=w1109-h663)
+
+
 Output from Basemap and Matplotlib method:
 ```
 data loaded
