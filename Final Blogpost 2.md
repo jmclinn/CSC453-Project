@@ -16,7 +16,7 @@ Matplotlib program and execution:
 
 image ouput: 
 
-![Our Processed Data](https://drive.google.com/file/d/0B8DzqrvAlz6uNHBwZERFVUJwRXM/view?usp=sharing)
+![Matplotlib/Basemap Processed Data](https://www.dropbox.com/s/v6ih909lk6xpce7/basemap-ex-sm.png?dl=0)
 
 
 Output from Basemap and Matplotlib method:
