@@ -96,7 +96,7 @@ If we double our current time, bringing it to 30 seconds including projection, o
 
 The first image is from the Matplotlib process, where the Cylindrical Equidistant map projection is applied. The difference in latitude values close to the poles can be clearly seen in our process' output (on the right). Otherwise everything is working as expected without any loss in clarity.
 
-Further Developement: 
+Further Developement 
 ======================
 - create a cache system
 - adding grid and stylistic detail to output image
