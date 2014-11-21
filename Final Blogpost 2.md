@@ -1,6 +1,6 @@
 CSC253 Final Blogpost 2
 ==========
-#### Pillo Mapping Program 
+####  Mapping Program 
 ###### Jonathan &amp; Yennifer
 
 Introduction:
@@ -16,7 +16,7 @@ Matplotlib program and execution:
 
 image ouput: 
 
-![alt text](insert url)
+![Our Processed Data](https://drive.google.com/file/d/0B8DzqrvAlz6uNHBwZERFVUJwRXM/view?usp=sharing)
 
 
 Output from Basemap and Matplotlib method:
@@ -38,6 +38,8 @@ mask plotting
 
 Mapping Data Using Pillow: 
 ===========================
+
+![Our Processed Data](https://drive.google.com/file/d/0B8DzqrvAlz6uNHBwZERFVUJwRXM/view?usp=sharing)
 
 Output from new method that uses Pillow (PIL) to create plot:
 ```
