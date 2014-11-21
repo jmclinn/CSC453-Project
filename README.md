@@ -18,4 +18,4 @@ By separating out this process into several steps, we will look at several poten
 Overall we want to create a faster, easier to use method for plotting projected data commonly used by research scientists and data analysts.
 
 #####First Progress Update:
-[https://github.com/jmclinn/CSC453-Project/blob/master/Final%20Blogpost%202.md]
+https://github.com/jmclinn/CSC453-Project/blob/master/Final%20Blogpost%202.md
