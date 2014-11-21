@@ -39,7 +39,7 @@ mask plotting
 Mapping Data Using Pillow: 
 ===========================
 
-![Our Processed Data](https://drive.google.com/file/d/0B8DzqrvAlz6uNHBwZERFVUJwRXM/view?usp=sharing)
+![Our Processed Data](https://drive.google.com/file/d/0B8DzqrvAlz6uNHBwZERFVUJwRXM/view)
 
 Output from new method that uses Pillow (PIL) to create plot:
 ```
