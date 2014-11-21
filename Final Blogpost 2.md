@@ -30,6 +30,8 @@ That code is available at https://github.com/jmclinn/CSC453-Project/blob/master/
 
 Now we have a list of color values the length of our desired value range. The indeces within the list correspond to the difference between the desired value and the minimum in the range. Each value in the dataset is now paired with the required color and saved to a dictionary, where each key is a hex color and its value is a list of tuples, each of which corresponds to xy-coordinates within the image.
 
+Additionally, a mask can be applied to certain values, or ranges of values. In this case a black mask is applied to the 'land' values, which were set to at most -1e34. The mask used catches all values less than this 'land' value. The rest of the value range is set to a max color of red, and min color of blue.
+
 ```python
 
 # Data Import
@@ -74,6 +76,22 @@ for y,sl in enumerate(reversed(sgsflux)): # for each sublist within dataset (row
       else:
          dictlist[val] = [(x,y)] #create new color key
 ```
+
+#####Efficiency Differences
+
+The original method used matplotlib to take the dataset, a projection given by the Basemap extension, and a given linear color range to create a plot. Using the same dataset as above (1,254,400 data points), this process took approximately 110 seconds. The plotting portion of this process took about 70 second, and while that included the projection mapping as well, our new process took just 16 seconds.
+
+Once projection mapping is added to our process, we anticipate that it will at most double our execution time which is just half of the time taken by Matplotlib. This is because the majority of our processing time is assigning the color values to the dataset point by point, and the projection mapping is a similar process.
+
+One added efficiency with our process is the inclusion of data masking within the color mapping. In Matplotlib the mask needed to be applied after the dataset was processed and plotted. For this data, that added another 30 seconds.
+
+If we double our current time, bringing it to 30 seconds including projection, our process would be three times more efficient than when using Matplotlib. By having complete control over our data manipulation, we also have the opportunity to cache data at various stages, further increasing efficiency upon multiple iterations.
+
+#####Image Comparison
+
+<img src="http://storage.googleapis.com/random-jmclinn/basemap-ex-sm.png"></img>
+<img src="http://storage.googleapis.com/random-jmclinn/sgs20-2-sm.png"></img>
+
 
 Matplotlib program and execution 
 =====================================
