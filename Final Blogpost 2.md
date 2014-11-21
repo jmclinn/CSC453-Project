@@ -16,7 +16,7 @@ Matplotlib program and execution:
 
 image ouput: 
 
-![Matplotlib/Basemap Processed Data](https://dl-web.dropbox.com/get/TCS453/basemap-ex-sm.png?_subject_uid=43009455&w=AACGOpOdpuS9KqOQGdgww1EIm3U1i6H4ytZ1eVQB_9GtVg)
+![Matplotlib/Basemap Processed Data](http://storage.googleapis.com/random-jmclinn/basemap-ex-sm.png)
 
 
 Output from Basemap and Matplotlib method:
@@ -39,7 +39,7 @@ mask plotting
 Mapping Data Using Pillow: 
 ===========================
 
-![Our Processed Data](https://dl-web.dropbox.com/get/TCS453/sgs20-sm.png?_subject_uid=43009455&w=AACLhlFDz4-P13BOcjxrdpUWPKvDJHD4ZInS2NgeR1MUug)
+![Our Processed Data](http://storage.googleapis.com/random-jmclinn/sgs20-sm.png)
 
 Output from new method that uses Pillow (PIL) to create plot:
 ```
