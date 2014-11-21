@@ -15,14 +15,14 @@ For our first progress update we wanted to prove that we could plot the data qui
 Pillow (PIL)
 ============
 
-After looking at several libraries, we chose to use Pillow, which is an updated fork of the Python Imaging Library (PIL). Since Pillow is an image editing package, data points will be given color values based on a given value range that can be mapped out as pixels to create the image. An initial concern was that individual pixel placement would take too long, so our initial tests randomly generated datasets to obtain timing information. We altered the number of data points between 1 and 10 million, but the plotting of a 1000x1000 pixel image remained under 0.5 seconds. As this test shows, the advantage of using Pillow means the printing of the datamap is independent of dataset size. Instead, its determined by the image output size, and for the purpose of this project anything much larger than 1000x1000 pixels is unecessary.
+After looking at several libraries, we chose to use Pillow, which is an updated fork of the Python Imaging Library (PIL). Since Pillow is an image editing package, data points will be given color values based on a given value range that can be mapped out as pixels to create the image. An initial concern was that individual pixel placement would take too long, so our initial tests randomly generated datasets to obtain timing information. We altered the number of data points between 1 and 10 million, but the plotting of a 1000x1000 pixel image remained under 0.5 seconds. As this test shows, the advantage of using Pillow is that the printing of the datamap is independent of dataset size. Instead, its determined by the image output size, and for the purpose of this project anything much larger than 1000x1000 pixels is unecessary.
 
 Data Input and Manipulation (without projection)
 ================================================
 
 #####Color Range
 
-Next we took the input data and manipulated it into the form required by Pillow. This meant creating a linear color range, and its associated values within the dataset. Taking a hex value (ex. #000000 is black) for each max and min value, we used two functions developed by a developer named Ben Southgate (http://bsou.io/p/3) that create an array of a given length and two  that gives a linear color change between. That takes a length 'n' and two color values, and returns a linear range of length 'n' that spans between those two colors.
+We took the input data and manipulated it into the form required by Pillow. This meant creating a linear color range, and its associated values within the dataset. Taking a hex value (ex. #000000 is black) for each max and min value, we used two functions developed by a developer named Ben Southgate (http://bsou.io/p/3). These functions take a length 'n' and two color values, and return a linear range of length 'n' that spans between those two colors.
 
 That code is available at https://github.com/jmclinn/CSC453-Project/blob/master/rgb2hex.py
 
@@ -30,7 +30,7 @@ That code is available at https://github.com/jmclinn/CSC453-Project/blob/master/
 
 Now we have a list of color values the length of our desired value range. The indeces within the list correspond to the difference between the desired value and the minimum in the range. Each value in the dataset is now paired with the required color and saved to a dictionary, where each key is a hex color and its value is a list of tuples, each of which corresponds to xy-coordinates within the image.
 
-Additionally, a mask can be applied to certain values, or ranges of values. In this case a black mask is applied to the 'land' values, which were set to at most -1e34. The mask used catches all values less than this 'land' value. The rest of the value range is set to a max color of red, and min color of blue.
+Additionally, a mask can be applied to certain values, or ranges of values. In this case a black mask is applied to the 'land' values, which were set to at most -1e34. The mask catches all values less than this 'land' value. The rest of the value range is set to a max color of red, and min color of blue.
 
 ```python
 
@@ -83,7 +83,7 @@ The original method used Matplotlib to take the dataset, a projection given by t
 
 The original code using Matplotlib can be seen here: https://github.com/jmclinn/CSC453-Project/blob/master/basemap-ex.py
 
-Once projection mapping is added to our process, we anticipate that it will at most double our execution time which is just half of the time taken by Matplotlib. This is because the majority of our processing time is assigning the color values to the dataset point by point, and the projection mapping is a similar process.
+Once projection mapping is added to our process, we anticipate that it will at most double our execution time which is just half of the time taken by Matplotlib. This is because the majority of our processing time involves assigning the color values to the dataset point by point, and the projection mapping is a similar process.
 
 One added efficiency with our process is the inclusion of data masking within the color mapping. In Matplotlib the mask needed to be applied after the dataset was processed and plotted. For this data, that added another 30 seconds.
 
@@ -99,7 +99,7 @@ The first image is from the Matplotlib process, where the Cylindrical Equidistan
 Further Developement 
 ======================
 - create a cache system
-- adding grid and stylistic detail to output image
+- adding grid and stylistic detail to the output image
 - create a user interface (command line or graphical) in python where the user can change color range, transformation, lattitude longitude lines, dataset information, etc.
  
 
