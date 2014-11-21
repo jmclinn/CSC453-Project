@@ -79,7 +79,9 @@ for y,sl in enumerate(reversed(sgsflux)): # for each sublist within dataset (row
 
 #####Efficiency Differences
 
-The original method used matplotlib to take the dataset, a projection given by the Basemap extension, and a given linear color range to create a plot. Using the same dataset as above (1,254,400 data points), this process took approximately 110 seconds. The plotting portion of this process took about 70 second, and while that included the projection mapping as well, our new process took just 16 seconds.
+The original method used Matplotlib to take the dataset, a projection given by the Basemap extension, and a given linear color range to create a plot. Using the same dataset as above (1,254,400 data points), this process took approximately 110 seconds. The plotting portion of this process took about 70 second, and while that included the projection mapping as well, our new process took just 16 seconds.
+
+The original code using Matplotlib can be seen here: https://github.com/jmclinn/CSC453-Project/blob/master/basemap-ex.py
 
 Once projection mapping is added to our process, we anticipate that it will at most double our execution time which is just half of the time taken by Matplotlib. This is because the majority of our processing time is assigning the color values to the dataset point by point, and the projection mapping is a similar process.
 
@@ -92,59 +94,13 @@ If we double our current time, bringing it to 30 seconds including projection, o
 <img src="http://storage.googleapis.com/random-jmclinn/basemap-ex-sm.png"></img>
 <img src="http://storage.googleapis.com/random-jmclinn/sgs20-2-sm.png"></img>
 
-
-Matplotlib program and execution 
-=====================================
-
-
-image ouput: 
-
-![Matplotlib/Basemap Processed Data](http://storage.googleapis.com/random-jmclinn/basemap-ex-sm.png)
-
-
-Output from Basemap and Matplotlib method:
-```
-data loaded
-0.0844769477844
-mask creation
-0.004065990448
-create Basemap
-4.6259188652
-grid lat/lon
-0.0199291706085
-data plotting
-58.491672039
-mask plotting
-24.1573448181
-```
-
-
-Mapping Data Using Pillow: 
-===========================
-
-![Our Processed Data](http://storage.googleapis.com/random-jmclinn/sgs20-1-sm.png)
-
-Output from new method that uses Pillow (PIL) to create plot:
-```
-Data Import
-0.0063898563385
-Data Processing
-0.524234056473
-Color Mapping
-14.9274668694
-Image Creation
-0.588411092758
-```
-
-conclusions:
-===========
-
+The first image is from the Matplotlib process, where the Cylindrical Equidistant map projection is applied. The difference in latitude values close to the poles can be clearly seen in our process' output (on the right). Otherwise everything is working as expected without any loss in clarity.
 
 Further Developement: 
 ======================
-- create a library
-- adding grid and stylistic detail
-- create a user interface in python where the user can change color, transformation, lattitude longitude lines, image output size among other basic image properties. 
+- create a cache system
+- adding grid and stylistic detail to output image
+- create a user interface (command line or graphical) in python where the user can change color range, transformation, lattitude longitude lines, dataset information, etc.
  
 
 
