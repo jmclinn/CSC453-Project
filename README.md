@@ -16,3 +16,6 @@ Caching the compiled data prior to plotting was originally considered as a poten
 By separating out this process into several steps, we will look at several potential optimization processes. There is the option to pickle or cache the projected data, the color-mapped data, or some version of both which we could then more readily plot. There is also the potential to use an animation based process, like ubigraph, to allow for more real-time switching between projections given a particular data set.
 
 Overall we want to create a faster, easier to use method for plotting projected data commonly used by research scientists and data analysts.
+
+#####First Progress Update:
+[https://github.com/jmclinn/CSC453-Project/blob/master/Final%20Blogpost%202.md]
