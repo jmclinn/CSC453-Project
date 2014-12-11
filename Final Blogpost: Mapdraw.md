@@ -27,32 +27,32 @@ After looking at several libraries, we chose to use Pillow, which is an updated 
 Data Input and Manipulation
 ================================================
 
-#####Color Range
+####Color Range
 
 We took the input data and manipulated it into the form required by Pillow. This meant creating a linear color range, and its associated values within the dataset. Taking a hex value (ex. #000000 is black) for each max and min value, we used two functions developed by a developer named Ben Southgate (http://bsou.io/p/3). These functions take a length 'n' and two color values, and return a linear range of length 'n' that spans between those two colors.
 
 The code is available at https://github.com/jmclinn/CSC453-Project/blob/master/rgb2hex.py
 
-#####Value to Color Mapping
+####Value to Color Mapping
 
 Now we have a list of color values the length of our desired value range. The indeces within the list correspond to the difference between the desired value and the minimum in the range. Each value in the dataset is now paired with the required color and saved to a dictionary, where each key is a hex color and its value is a list of tuples, each of which corresponds to xy-coordinates within the image.
 
 Additionally, a mask can be applied to certain values, or ranges of values. In this case a black mask is applied to the 'land' values, which were set to at most -1e34. The mask catches all values less than this 'land' value. The rest of the value range is set to a max color of red, and min color of blue.
 
 
-#####Data Import
+####Data Import
 
 
-#####Tranformation 
+####Tranformation 
 
 
 
-#####Image creation 
+####Image creation 
 
 In this process the data is paired with a color map and an image is created using predetermined default values. The color map dictionary places color at specific pixels to create an image.
 
 
-##### user interface
+#### user interface
 The user places the desired parameters in the command lineas shown below. This program allows the user to modify the colors, colorbar range, title, and folder location among other attributes. 
 
 
@@ -61,14 +61,14 @@ Results
 ####Color mapping efficiency 
 With matplotlib, the mapping process involves color mixing strategies whereas Mapdraw is able to simplify this method so that the user can input hex values to create color range.
 
-##### time Efficiency 
+####time Efficiency 
 
 Unlike matplotlib which takes a total of 74 seconds, the Mapdraw method completed the mapping and projection process in only 15 seconds. Mapdraw does not require the user to know Python because it allows the user to modify the code from the command line.Mapdraw eliminates the need to download multiple packages therefore saving the user even more time. 
 
 
 
 
-#####Image Comparison
+####Image Comparison
 
 <img src=""></img>
 <img src=""></img>
