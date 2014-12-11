@@ -131,12 +131,37 @@ def mapdraw(args,colorbar):
 ```
 
 ###User interface
-The user places the desired parameters in the command lineas shown below. This program allows the user to modify the colors, colorbar range, title, and folder location among other attributes. an example of an ouput to a specific user input is shown below: 
+The user places the desired parameters in the command lineas shown below. This program allows the user to modify the colors, colorbar range, title, and folder location among other attributes. an example of an ouput to a specific user input is shown below:
+
+```
+mapdraw User$  python map.py file sgs.nc lat u_lat lon u_lon data sgsflux,9 title "SGS FLUX" mask -1230000000000000,#000000 save results max 10 min -10 colors "#FFAA00,#AAFF00,#00AAFF" 
+21
+file
+sgs.nc
+lat
+u_lat
+lon
+u_lon
+data
+sgsflux,9
+title
+SGS FLUX
+mask
+-1230000000000000,#000000
+save
+results
+max
+10
+min
+-10
+colors
+#FFAA00,#AAFF00,#00AAFF
+```
 
 <img src="https://github.com/jmclinn/CSC453-Project/blob/master/images/SGS%20FLUX_-10_10.png" height="300" ></img>
 
 If the user chooses not to input parameters the rogram defaults to predetermined values as shown in the code block below. 
-
+```
 ```python 
 # ===== ARGUMENT PARSING AND SETTING DEFAULTS =====
 def setargs(args):
