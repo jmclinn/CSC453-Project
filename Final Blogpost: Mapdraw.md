@@ -108,9 +108,6 @@ Unlike matplotlib which takes a total of 74 seconds, the Mapdraw method complete
 
 <img src="https://github.com/jmclinn/CSC453-Project/blob/master/images/basemap20.png" height="300" ></img><img src="https://github.com/jmclinn/CSC453-Project/blob/master/images/SGS%20FLUX_-20_20.png" height="300" display= "inline"></img>
 
-   <div class="caption"> Matplotlib. </div><div class="caption" display="inline" > Mapdraw. </div>
-
-
 The first image is from the Matplotlib process, where the Cylindrical Equidistant map projection is applied. The difference in latitude values close to the poles can be clearly seen in our process' output (on the right). Otherwise everything is working as expected without any loss in clarity.
 
 Further Developement 
