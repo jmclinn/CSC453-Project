@@ -85,7 +85,7 @@ def colormap(args):
 
 ###Transformation 
 
-This code shows the process of adding a transformation to the data. The transformation equation used is hadcoded in this example, and has no relation to any geographical accuracy. Every fifth row of data the size of the transformed row is increased. This process is explained in detail below.
+This code shows the process of adding a transformation to the data. The transformation equation used is hardcoded in this example, and has no relation to any geographical accuracy. Every fifth row of data the size of the transformed row is increased. This process is explained in detail below.
 
 ```python
 
