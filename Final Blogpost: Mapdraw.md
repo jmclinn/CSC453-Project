@@ -130,7 +130,7 @@ def mapdraw(args,colorbar):
 ```
 
 ###User interface
-The user places the desired parameters in the command lineas shown below. This program allows the user to modify the colors, colorbar range, title, and folder location among other attributes. An example of an ouput to a specific user input is shown below:
+The user places the desired parameters in the command lineas shown below. This program allows the user to modify the colors, colorbar range, title, and folder location among other attributes. The system then displays all the input data to the user showing both the default and input values. An example of an ouput to a specific user input is shown below:
 
 ```
 mapdraw User$  python map.py file sgs.nc lat u_lat lon u_lon data sgsflux,9 title "SGS FLUX" mask -1230000000000000,#000000 save results max 10 min -10 colors "#FFAA00,#AAFF00,#00AAFF" 
@@ -208,9 +208,12 @@ def setargs(args):
 Results
 ========
 ###Color mapping efficiency 
-With matplotlib, the mapping process involves color mixing strategies whereas Mapdraw is able to simplify this method so that the user can input hex values to create color range.
+With matplotlib, the mapping process involves color mixing strategies whereas Mapdraw is able to simplify this method so that the user can input hex values to create the color range. This is efficient in that the user does not have knowledge of color mixing or edit the actual python code in order to set the range. 
      
-<insert code comparison here>
+Matplotlib color Mixing:
+
+Mapdraw color range user input : 
+
 ###Time Efficiency 
 
 Unlike matplotlib which takes approximately 74 seconds, the Mapdraw method completed the mapping and projection process in approximately 15 seconds. Mapdraw does not require the user to know Python because it allows the user to modify the code from the command line and it eliminates the need to download multiple packages therefore saving the user even more time. 
