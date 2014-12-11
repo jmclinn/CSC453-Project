@@ -1,4 +1,4 @@
-``=============================
+
 ####  Mapdraw: mapping program using PIL 
 ###### Jonathan &amp; Yennifer
 
