@@ -160,7 +160,7 @@ colors
 <img src="https://github.com/jmclinn/CSC453-Project/blob/master/images/SGS%20FLUX_-10_10.png" height="300" ></img>
 
 If the user chooses not to input parameters the rogram defaults to predetermined values as shown in the code block below. 
-```
+
 ```python 
 # ===== ARGUMENT PARSING AND SETTING DEFAULTS =====
 def setargs(args):
@@ -210,7 +210,7 @@ Results
 ###Color mapping efficiency 
 With matplotlib, the mapping process involves color mixing strategies whereas Mapdraw is able to simplify this method so that the user can input hex values to create color range.
      
-
+<insert code comparison here>
 ###Time Efficiency 
 
 Unlike matplotlib which takes approximately 74 seconds, the Mapdraw method completed the mapping and projection process in approximately 15 seconds. Mapdraw does not require the user to know Python because it allows the user to modify the code from the command line and it eliminates the need to download multiple packages therefore saving the user even more time. 
