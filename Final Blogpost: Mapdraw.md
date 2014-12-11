@@ -30,7 +30,7 @@ Data Input and Manipulation
 
 We took the input data and manipulated it into the form required by Pillow. This meant creating a linear color range, and its associated values within the dataset. Taking a hex value (ex. #000000 is black) for each max and min value, we used two functions developed by a developer named Ben Southgate (http://bsou.io/p/3). These functions take a length 'n' and two color values, and return a linear range of length 'n' that spans between those two colors.
 
-The code is available at https://github.com/jmclinn/CSC453-Project/blob/master/rgb2hex.py
+The code is available at https://github.com/jmclinn/CSC453-Project/blob/master/mapdraw/mapdraw/rgb2hex/rgb2hex.py
 
 ###Value to Color Mapping
 
@@ -98,6 +98,7 @@ Results
 ========
 ###Color mapping efficiency 
 With matplotlib, the mapping process involves color mixing strategies whereas Mapdraw is able to simplify this method so that the user can input hex values to create color range.
+     
 
 ###Time Efficiency 
 
@@ -108,7 +109,7 @@ Unlike matplotlib which takes a total of 74 seconds, the Mapdraw method complete
 
 <img src="https://github.com/jmclinn/CSC453-Project/blob/master/images/basemap20.png" height="300" ></img><img src="https://github.com/jmclinn/CSC453-Project/blob/master/images/SGS%20FLUX_-20_20.png" height="300" display= "inline"></img>
 
-The first image is from the Matplotlib process, where the Cylindrical Equidistant map projection is applied. The difference in latitude values close to the poles can be clearly seen in our process' output (on the right). Otherwise everything is working as expected without any loss in clarity.
+The first image is from the Matplotlib process, where the Cylindrical Equidistant map projection is applied. The difference in latitude values close to the poles can be clearly seen in our process' output (on the right) due to the difference in transformation method. Otherwise, everything is working as expected without any loss in clarity.
 
 Further Developement 
 ======================
