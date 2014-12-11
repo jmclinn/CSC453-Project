@@ -106,7 +106,7 @@ Unlike matplotlib which takes a total of 74 seconds, the Mapdraw method complete
 
 ###Image Comparison
 
-<img src="hhttps://github.com/jmclinn/CSC453-Project/blob/master/images/basemap20.png" height="300" ><img src="https://github.com/jmclinn/CSC453-Project/blob/master/images/SGS%20FLUX_-20_20.png" height="300" display= "inline" ></img>
+<img src="hhttps://github.com/jmclinn/CSC453-Project/blob/master/images/basemap20.png" height="300"><img src="https://github.com/jmclinn/CSC453-Project/blob/master/images/SGS%20FLUX_-20_20.png" height="300" display= "inline"></img>
 
    <div class="caption"> Matplotlib. </div><div class="caption" > Mapdraw. <display="inline"/div>
 
