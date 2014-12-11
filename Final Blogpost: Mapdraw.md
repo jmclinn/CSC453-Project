@@ -86,6 +86,30 @@ def colormap(args):
 ###Transformation 
 <img src="https://github.com/jmclinn/CSC453-Project/blob/master/images/transform.png" height="300" ></img>
 
+```python
+
+# ===== TRANSFORMATION =====
+def transform(args):
+   data = args['data']
+   ylen = args['ylen']
+   data2 = []
+   for i,row in enumerate(reversed(data)):
+      if i < 5:
+         stage = 1
+      else:
+         stage = i // 5
+      for k in range(stage):
+         data2.append(row)
+
+   total = len(data2)
+   data3 = data2[0::int(round(total/ylen))]
+   ylen = len(data3)
+   
+   args['data'] = data3
+   args['ylen'] = ylen
+   return args
+```
+
 ###Image creation 
 
 In this process the data is paired with a color map and an image is created using predetermined default values. The color map dictionary places color at specific pixels to create an image.
