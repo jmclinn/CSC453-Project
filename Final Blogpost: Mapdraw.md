@@ -7,8 +7,8 @@ Problem
 =======
 When mapping collected data to a world map, using the Basemap package within matplotlib, there are several disadvantages. Having a fair understanding of Python is necessary, and the code must be changed each time a figure is produced. Depending on how many data points are being mapped, what projection is being used, and the detail of the map this process can take several minutes. Also matplotlib is highly dependant on multiple packages and is not very user friendly. 
 
-#####Why does it matter?
-
+#####Why does it matter? 
+The matplotlib program is currently used by scientists and researches in order visualize geographical data. These potential matplotlib users may not know Python, may not have the time to learn it, or may even have difficulty with the multiple package installs that necessary. The amount of coding required to create the mapping process for one output is extensive and too time consuming for potential users. 
 
 Matplotlib method 
 =================
@@ -17,10 +17,12 @@ The original method used Matplotlib to take the dataset, a projection given by t
  original code using Matplotlib can be seen here: https://github.com/jmclinn/CSC453-Project/blob/master/basemap-ex.py
 
 
-Pillow (PIL)
+Mapdraw
 ============
 
-After looking at several libraries, we chose to use Pillow, which is an updated fork of the Python Imaging Library (PIL). Since Pillow is an image editing package, data points will be given color values based on a given value range that can be mapped out as pixels to create the image. An initial concern was that individual pixel placement would take too long, so our initial tests randomly generated datasets to obtain timing information. We altered the number of data points between 1 and 10 million, but the plotting of a 1000x1000 pixel image remained under 0.5 seconds. As this test shows, the advantage of using Pillow is that the printing of the datamap is independent of dataset size. Instead, its determined by the image output size, and for the purpose of this project anything much larger than 1000x1000 pixels is unecessary.
+After looking at several libraries, we chose to use Pillow, which is an updated fork of the Python Imaging Library (PIL). Since Pillow is an image editing package, data points will be given color values based on a given value range that can be mapped out as pixels to create the image. The user can specialized their inputs (output size, color, title, etc.) using the command line.
+
+
 
 Data Input and Manipulation
 ================================================
@@ -29,7 +31,7 @@ Data Input and Manipulation
 
 We took the input data and manipulated it into the form required by Pillow. This meant creating a linear color range, and its associated values within the dataset. Taking a hex value (ex. #000000 is black) for each max and min value, we used two functions developed by a developer named Ben Southgate (http://bsou.io/p/3). These functions take a length 'n' and two color values, and return a linear range of length 'n' that spans between those two colors.
 
-Thacode is available at https://github.com/jmclinn/CSC453-Project/blob/master/rgb2hex.py
+The code is available at https://github.com/jmclinn/CSC453-Project/blob/master/rgb2hex.py
 
 #####Value to Color Mapping
 
@@ -47,18 +49,21 @@ Additionally, a mask can be applied to certain values, or ranges of values. In t
 
 #####Image creation 
 
-
+In this process the data is paired with a color map and an image is created using predetermined default values. The color map dictionary places color at specific pixels to create an image.
 
 
 ##### user interface
+The user places the desired parameters in the command lineas shown below. This program allows the user to modify the colors, colorbar range, title, and folder location among other attributes. 
 
 
 Results
 ========
+####Color mapping efficiency 
+With matplotlib, the mapping process involves color mixing strategies whereas Mapdraw is able to simplify this method so that the user can input hex values to create color range.
 
-#####Efficiency Differences
+##### time Efficiency 
 
-
+Unlike matplotlib whic takes a total of 74 seconds, the Mapdraw method completed the mapping and projection process in only 15 seconds. Mapdraw does not require the user to know Python because it allows the user to modify the code from the command line.Mapdraw eliminates the need to download multiple packages therefore saving the user even more time. 
 
 
 
@@ -68,14 +73,16 @@ Results
 <img src=""></img>
 <img src=""></img>
 
+
 The first image is from the Matplotlib process, where the Cylindrical Equidistant map projection is applied. The difference in latitude values close to the poles can be clearly seen in our process' output (on the right). Otherwise everything is working as expected without any loss in clarity.
 
 Further Developement 
 ======================
-- 
-- 
+- transformation changes as argument input 
+- add more customization of inputs ( color map structure, data matrix structures)
+-multiple outputs with single command 
+- pair with visual interface
  
-
 
 
 
