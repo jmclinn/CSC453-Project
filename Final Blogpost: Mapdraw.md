@@ -7,7 +7,7 @@ Problem
 When mapping collected data to a world map, using the Basemap package within matplotlib, there are several disadvantages. Having a fair understanding of Python is necessary, and the code must be changed each time a figure is produced. Depending on how many data points are being mapped, what projection is being used, and the detail of the map this process can take several minutes. Also matplotlib is highly dependant on multiple packages and is not very user friendly. 
 
 ###Why does it matter? 
-The matplotlib program is currently used by scientists and researches in order visualize geographical data. These potential matplotlib users may not know Python, may not have the time to learn it, or may even have difficulty with the multiple package installs that necessary. The amount of coding required to create the mapping process for one output is extensive and too time consuming for potential users. 
+The matplotlib program is currently used by scientists and researches in order visualize geographical data. These potential matplotlib users may not know Python, may not have the time to learn it, or may even have difficulty with the multiple package installs necessary to run the matplotlib program. Also, the amount of coding required to create the mapping process for only one output is extensive and time consuming. 
 
 Matplotlib method 
 =================
@@ -83,7 +83,6 @@ def colormap(args):
      
 ```
 
-
 ###Transformation 
 <img src="https://github.com/jmclinn/CSC453-Project/blob/master/images/transform.png" height="300" ></img>
 
@@ -131,7 +130,7 @@ def mapdraw(args,colorbar):
 ```
 
 ###User interface
-The user places the desired parameters in the command lineas shown below. This program allows the user to modify the colors, colorbar range, title, and folder location among other attributes. an example of an ouput to a specific user input is shown below:
+The user places the desired parameters in the command lineas shown below. This program allows the user to modify the colors, colorbar range, title, and folder location among other attributes. An example of an ouput to a specific user input is shown below:
 
 ```
 mapdraw User$  python map.py file sgs.nc lat u_lat lon u_lon data sgsflux,9 title "SGS FLUX" mask -1230000000000000,#000000 save results max 10 min -10 colors "#FFAA00,#AAFF00,#00AAFF" 
