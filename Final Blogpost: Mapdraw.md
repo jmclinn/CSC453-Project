@@ -84,7 +84,6 @@ def colormap(args):
 ```
 
 ###Transformation 
-<img src="https://github.com/jmclinn/CSC453-Project/blob/master/images/transform.png" height="300" ></img>
 
 ```python
 
@@ -109,6 +108,17 @@ def transform(args):
    args['ylen'] = ylen
    return args
 ```
+
+Prior to applying the transform to the image the command line arguments are parsed, and defaults are applied to any missing arguments. This process is explained later in the 'User Interface' section. From the arguments given the data is imported with the netCDF4 library. The data is an array of arrays, representing a matrix form. The position of each inner array represents the row, and the inner data points are the values for each column within that row.
+
+For this transformation we only adjust the y-axis, or latitude, of the data, but x and y transformations are just as easily implemented. To improve efficiency we avoided any numerical operations on the actual values. The basic process is shown below in the figure.
+
+<img src="https://github.com/jmclinn/CSC453-Project/blob/master/images/transform.png" height="300" ></img>
+
+The initial data matrix is run through a transformation equation that is a function of either latitude or longitude. Normalizing our data to its global position, we add rows and columns as necessary based on the equation. For our example, as shown above, the top of the image represented the largest reduction in size in our transformation, so we
+took this as our starting point where there is a one-to-one translation between the data and the transformation. As we move down the matrix there is an increase in the number of additional times each row is represented in the transform.
+
+Once the transform matrix is complete we can adjust the fidelity of the data that is processed by the program by uniformly deleting rows throughout the dataset's range. The more rows (or columns) removed the faster the data can be processed. This can also be used to preserve ratios between x and y when a transformation is done on only one axis. In our case data is removed to reduce the data's y-length to match what is was prior to addition of the rows for the transformation.
 
 ###Image creation 
 
