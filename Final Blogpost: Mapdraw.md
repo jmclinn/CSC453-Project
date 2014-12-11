@@ -38,12 +38,52 @@ Now we have a list of color values the length of our desired value range. The in
 
 Additionally, a mask can be applied to certain values, or ranges of values. In this case a black mask is applied to the 'land' values, which were set to at most -1e34. The mask catches all values less than this 'land' value. The rest of the value range is set to a max color of red, and min color of blue.
 
+```python 
+# ===== COLOR MAP =====
+def colormap(args):
+   rangelen = args['max'] - args['min']
+   rangemid = args['min'] + (rangelen / 2)
+   rangemax = args['max']
+   rangemin = args['min']
+   
+   cr2 = rgb2hex.linear_gradient(args['colors'][1],args['colors'][2],(int(rangelen/2*1000))+1)['hex']
+   cr1 = rgb2hex.linear_gradient(args['colors'][0],args['colors'][1],(int(rangelen/2*1000))+1)['hex']
+   dictlist = {}
 
-###Data Import
+   # === PAIR DATA WITH COLOR MAP ===
+   for y,sl in enumerate(args['data']): # for each sublist within dataset (row)
+      for x,i in enumerate(sl): # for each point in sublist (column)
+         val = args['colors'][1]
+         #top half of data range
+         if i > rangemid:
+            if i <= rangemax:
+               val = cr2[int((i - (rangemin + rangelen/2)) * 1000)]
+            else:
+               val = args['colors'][2]
+         #bottom half of data range
+         elif i < rangemid:
+            if i >= rangemin:
+               val = cr1[int((i - rangemin) * 1000)]
+            else:
+               val = args['colors'][0] 
+         # mask
+         if 'mask' in args:
+            if i <= args['mask'][0]:
+               val = args['mask'][1]
+         # add to dict
+         if val in dictlist:
+            dictlist[val].append((x,y))
+         else:
+            dictlist[val] = [(x,y)]
+            
+   args['datamap'] = dictlist
+
+     
+```
 
 
 ###Transformation 
-
+<img src="https://github.com/jmclinn/CSC453-Project/blob/master/images/transform.png" height="300" ></img>
 
 ###Image creation 
 
@@ -64,12 +104,12 @@ With matplotlib, the mapping process involves color mixing strategies whereas Ma
 Unlike matplotlib which takes a total of 74 seconds, the Mapdraw method completed the mapping and projection process in only 15 seconds. Mapdraw does not require the user to know Python because it allows the user to modify the code from the command line.Mapdraw eliminates the need to download multiple packages therefore saving the user even more time. 
 
 
-
-
 ###Image Comparison
 
-<img src=""></img>
-<img src=""></img>
+<img src="https://github.com/jmclinn/CSC453-Project/blob/master/images/transform.png" height="300" ></img>
+
+<img src="https://github.com/jmclinn/CSC453-Project/blob/master/images/transform.png" height="300" ></img>
+
 
 
 The first image is from the Matplotlib process, where the Cylindrical Equidistant map projection is applied. The difference in latitude values close to the poles can be clearly seen in our process' output (on the right). Otherwise everything is working as expected without any loss in clarity.
