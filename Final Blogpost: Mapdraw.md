@@ -189,7 +189,7 @@ With matplotlib, the mapping process involves color mixing strategies whereas Ma
 
 ###Time Efficiency 
 
-Unlike matplotlib which takes a total of 74 seconds, the Mapdraw method completed the mapping and projection process in only 15 seconds. Mapdraw does not require the user to know Python because it allows the user to modify the code from the command line.Mapdraw eliminates the need to download multiple packages therefore saving the user even more time. 
+Unlike matplotlib which takes approximately 74 seconds, the Mapdraw method completed the mapping and projection process in approximately 15 seconds. Mapdraw does not require the user to know Python because it allows the user to modify the code from the command line and it eliminates the need to download multiple packages therefore saving the user even more time. 
 
 
 ###Image Comparison
