@@ -131,9 +131,55 @@ def mapdraw(args,colorbar):
 ```
 
 ###User interface
-The user places the desired parameters in the command lineas shown below. This program allows the user to modify the colors, colorbar range, title, and folder location among other attributes. 
+The user places the desired parameters in the command lineas shown below. This program allows the user to modify the colors, colorbar range, title, and folder location among other attributes. an example of an ouput to a specific user input is shown below: 
 
 <img src="https://github.com/jmclinn/CSC453-Project/blob/master/images/SGS%20FLUX_-10_10.png" height="300" ></img>
+
+If the user chooses not to input parameters the rogram defaults to predetermined values as shown in the code block below. 
+
+```python 
+# ===== ARGUMENT PARSING AND SETTING DEFAULTS =====
+def setargs(args):
+   if 'title' not in args:
+      args['title'] = ''
+   if 'colors' not in args:
+      args['colors'] = ['#0000FF','#FFFFFF','#FF0000']
+   else:
+      args['colors'] = args['colors'].split(',')
+   if 'max' not in args:
+      args['max'] = 10
+   else:
+      if '.' in args['max']:
+         args['max'] = float(args['max'])
+      else:
+         args['max'] = int(args['max'])
+   if 'min' not in args:
+      args['min'] = -10
+   else:
+      if '.' in args['min']:
+         args['min'] = float(args['min'])
+      else:
+         args['min'] = int(args['min'])
+   if 'colorbar' not in args:
+      args['colorbar'] = 100
+   else: 
+      args['colorbar'] = int(args['colorbar'])
+   if 'y' not in args:
+      args['y'] = 1000
+   else:
+      args['y'] = int(args['y'])
+   if 'mask' in args:
+      args['mask'] = args['mask'].split(',')
+      args['mask'][0] = int(args['mask'][0]) 
+   if 'background' not in args:
+      args['background'] = 'white'
+   if 'save' not in args:
+      args['save'] = ''
+   
+   return args
+
+```
+
 
 Results
 ========
