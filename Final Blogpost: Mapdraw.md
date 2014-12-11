@@ -259,10 +259,14 @@ The first image is from the Matplotlib process, where the Cylindrical Equidistan
 
 Further Developement 
 ======================
-- transformation changes as argument input 
-- add more customization of inputs ( color map structure, data matrix structures)
--multiple outputs with single command 
+- transformation changes as argument input (to allow for customizable transformation of the data)
+- add more customization of inputs (ex. color map structure, data matrix structures)
+- multiple outputs with single command (for movie creation, etc.)
 - pair with visual interface
+   - more user-friendly
+   - easier to see and make changes
+   - for users not comfortable with command-line use
+   - potential for browser-based applications
 
 
 
