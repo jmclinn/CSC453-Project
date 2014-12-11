@@ -142,7 +142,7 @@ def mapdraw(args,colorbar):
 ```
 
 ###User interface
-The user places the desired parameters in the command line as shown below. This program allows the user to modify the colors, colorbar range, title, and folder location among other attributes. The system then displays all the input data to the user showing both the default and input values. 
+The user places the desired parameters in the command line as argument values as shown below. This allows the user to modify the colors, colorbar range, title, and folder location among other attributes as they see fit without having to adhere to a specific order or parameters. The system then displays all the input data to the user showing both the default and input values. 
 
 An example of an ouput to a specific user input:
 ```
@@ -172,7 +172,7 @@ colors
 
 <img src="https://github.com/jmclinn/CSC453-Project/blob/master/images/SGS%20FLUX_-10_10.png" height="300" ></img>
 
-If the user chooses not to input parameters the rogram defaults to predetermined values as shown in the code block below. 
+A few parameters are required for these types of data sets: file, data, lat, lon, depth. Otherwise, if the user chooses not to input values for the additional parameters the program defaults to default values as shown in the code block below. Allowing for defaults makes quick data processing easier and faster for the user.
 
 ```python 
 # ===== ARGUMENT PARSING AND SETTING DEFAULTS =====
