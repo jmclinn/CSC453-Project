@@ -11,7 +11,7 @@ The matplotlib program is currently used by scientists and researches in order v
 
 Matplotlib method 
 =================
-The original method used Matplotlib to take the dataset, a projection given by the Basemap extension, and a given linear color range to create a plot. 
+Matplotlib is a python library that creates plots using a syntax similiar to MATLAB. The original method uses Matplotlib to take the dataset, a projection given by the Basemap extension, and a given linear color range to create a plot. 
 
  original code using Matplotlib can be seen here: https://github.com/jmclinn/CSC453-Project/blob/master/basemap-ex.py
 
