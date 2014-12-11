@@ -124,7 +124,7 @@ Once the transform matrix is complete we can adjust the fidelity of the data tha
 
 ###Image creation 
 
-In this process the data is paired with a color map and an image is created using predetermined default values. The color map dictionary places color at specific pixels to create an image.
+This is where the Pillow library is used. The process takes our dictionary of colors paired with pixel locations and places each pixel individually onto the image. The title and colorbar are also added using Pillow. This process takes less than a second. The data maninpulation takes the bulk of the time, contrasting the process used previously with Matplotlib and Basemap.
 
 ```python
 # ===== MAP IMAGE CREATION =====
