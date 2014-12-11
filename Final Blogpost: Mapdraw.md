@@ -211,8 +211,27 @@ Results
 With matplotlib, the mapping process involves color mixing strategies whereas Mapdraw is able to simplify this method so that the user can input hex values to create the color range. This is efficient in that the user does not have knowledge of color mixing or edit the actual python code in order to set the range. 
      
 Matplotlib color Mixing:
+```
+Custom color dictionary ('cdict') creation
+# ------------------------------------------
+# instructions & references at (ref 4)
+# ------------------------------------------
+cdict = {'red': ((0.0, 0.0, 0.0),
+                  (0.5, 1.0, 1.0),
+                  (1.0, 1.0, 1.0)),
+         'green': ((0.0, 0.0, 0.0),
+                  (0.5, 1.0, 1.0),
+                  (1.0, 0.0, 0.0)),
+         'blue': ((0.0, 1.0, 1.0),
+                  (0.5, 1.0, 1.0),
+                  (1.0, 0.0, 0.0))}
+                  ```
+Mapdraw color range user input: 
 
-Mapdraw color range user input : 
+```
+python map.py file sgs.nc lat u_lat lon u_lon data colors "#FFAA00,#AAFF00,#00AAFF"
+```
+
 
 ###Time Efficiency 
 
