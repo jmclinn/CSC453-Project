@@ -31,6 +31,7 @@ Data Input and Manipulation
 We took the input data and manipulated it into the form required by Pillow. This meant creating a linear color range, and its associated values within the dataset. Taking a hex value (ex. #000000 is black) for each max and min value, we used two functions developed by a developer named Ben Southgate (http://bsou.io/p/3). These functions take a length 'n' and two color values, and return a linear range of length 'n' that spans between those two colors.
 
 The code is available at:
+
 https://github.com/jmclinn/CSC453-Project/blob/master/mapdraw/mapdraw/rgb2hex/rgb2hex.py
 
 ###Value to Color Mapping
