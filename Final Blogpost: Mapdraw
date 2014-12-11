@@ -1,6 +1,6 @@
-CSC253 Final Blogpost 2
-==========
-####  Mapping Program 
+CSC253 Final Blogpost 
+=============================
+####  Mapdraw: mapping program using PIL 
 ###### Jonathan &amp; Yennifer
 
 Problem
@@ -37,12 +37,18 @@ Additionally, a mask can be applied to certain values, or ranges of values. In t
 
 #####Data Import
 
+
 #####Tranformation 
+
+
 
 #####Image creation 
 
 
+
+
 ##### user interface
+
 
 Results
 ========
