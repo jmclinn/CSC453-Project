@@ -142,8 +142,9 @@ def mapdraw(args,colorbar):
 ```
 
 ###User interface
-The user places the desired parameters in the command lineas shown below. This program allows the user to modify the colors, colorbar range, title, and folder location among other attributes. The system then displays all the input data to the user showing both the default and input values. An example of an ouput to a specific user input is shown below:
+The user places the desired parameters in the command line as shown below. This program allows the user to modify the colors, colorbar range, title, and folder location among other attributes. The system then displays all the input data to the user showing both the default and input values. 
 
+An example of an ouput to a specific user input:
 ```
 mapdraw User$  python map.py file sgs.nc lat u_lat lon u_lon data sgsflux,9 title "SGS FLUX" mask -1230000000000000,#000000 save results max 10 min -10 colors "#FFAA00,#AAFF00,#00AAFF" 
 21
