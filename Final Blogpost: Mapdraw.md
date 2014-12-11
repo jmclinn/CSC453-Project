@@ -30,7 +30,8 @@ Data Input and Manipulation
 
 We took the input data and manipulated it into the form required by Pillow. This meant creating a linear color range, and its associated values within the dataset. Taking a hex value (ex. #000000 is black) for each max and min value, we used two functions developed by a developer named Ben Southgate (http://bsou.io/p/3). These functions take a length 'n' and two color values, and return a linear range of length 'n' that spans between those two colors.
 
-The code is available at https://github.com/jmclinn/CSC453-Project/blob/master/mapdraw/mapdraw/rgb2hex/rgb2hex.py
+The code is available at:
+https://github.com/jmclinn/CSC453-Project/blob/master/mapdraw/mapdraw/rgb2hex/rgb2hex.py
 
 ###Value to Color Mapping
 
@@ -89,6 +90,20 @@ def colormap(args):
 
 In this process the data is paired with a color map and an image is created using predetermined default values. The color map dictionary places color at specific pixels to create an image.
 
+```python
+# ===== MAP IMAGE CREATION =====
+def mapdraw(args,colorbar):
+   img = Image.new('RGB',(args['xlen'],args['ylen']),'white')
+   draw = Draw(img)
+
+   for key,value in args['datamap'].iteritems():
+      draw.point(value,getrgb(str(key)))
+
+   img2 = img.resize((args['y'],args['y']), Image.BILINEAR)
+
+   imgclr = colorbar.resize((args['colorbar'],img2.size[1]), Image.BILINEAR)
+
+```
 
 ###User interface
 The user places the desired parameters in the command lineas shown below. This program allows the user to modify the colors, colorbar range, title, and folder location among other attributes. 
