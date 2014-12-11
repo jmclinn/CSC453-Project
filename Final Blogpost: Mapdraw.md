@@ -93,6 +93,7 @@ In this process the data is paired with a color map and an image is created usin
 ###User interface
 The user places the desired parameters in the command lineas shown below. This program allows the user to modify the colors, colorbar range, title, and folder location among other attributes. 
 
+<img src="https://github.com/jmclinn/CSC453-Project/blob/master/images/SGS%20FLUX_-10_10.png" height="300" ></img>
 
 Results
 ========
